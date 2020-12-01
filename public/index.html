@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <title>post-message</title>
+
+</head>
+
+<body>
+  <script>
+    let tmp;
+    function onClick() {
+      tmp = window.open("./child", "_blank");
+    }
+    function post() {
+      tmp.postMessage("end", window.location.origin);
+    }
+  </script>
+  <button onclick="onClick()">OpenClild</button>
+  <button onclick="post()">post</button>
+</body>
+</html>

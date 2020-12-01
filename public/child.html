@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <title>post-message-clild</title>
+
+</head>
+
+<body>
+  <script>
+    function receiveEvent(e) {
+      if (e.source.origin === location.origin){
+        console.log(e)
+        switch (e.data) {
+          case "end":
+            alert("ローディングが終了しました。");
+            break;
+        
+          default:
+            break;
+        }
+      }
+    }
+
+    window.addEventListener("message", receiveEvent, false);
+  </script>
+</body>
+</html>
